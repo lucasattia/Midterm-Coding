@@ -27,14 +27,14 @@ public class ShapeTest extends TestCase {
     	Cuboid c1 = new Cuboid(4,5,1);
     	assert(c1 instanceof Cuboid);
  	    assertEquals((double) c1.area() == 58, true);
+ 	    assertEquals((double) c1.volume() == 20, true);
  	    assertEquals((double) c1.getiDepth() == 1, true); 
 	    c1.setiDepth(3);
 	    assertEquals((double) c1.getiDepth() == 3, true); 
 	    Cuboid c2 = new Cuboid(1,1,1);
-	    assertEquals((int) sortByArea.compare(c1,c2) == 1, true);
-	    assertEquals((int) sortByVolume.compare(c1,c2) == 1, true);
-	    //assertEquals((int) r1.compareTo(r2) == 1, true);
-
+	    assertEquals((int) SortByArea.compare(c1,c2) == 52, true);
+	    assertEquals((int) SortByVolume.compare(c1,c2) == 20, true);
+	    assertEquals((int) c1.compareTo(c2) == 1, false);
     	}
 	
 	@Test

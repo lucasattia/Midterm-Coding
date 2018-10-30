@@ -1,5 +1,9 @@
 package Shape;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class Cuboid extends Rectangle implements Comparable{
 	int iDepth;
 	public Cuboid(int x, int y, int z) {
@@ -27,16 +31,20 @@ public class Cuboid extends Rectangle implements Comparable{
 	@Override 
 	public int compareTo(Object o) {
 		Cuboid c1 = (Cuboid) o;
-		return (Double.compare(this.area(),c1.area()));
+		ArrayList<Cuboid> ar = new ArrayList<Cuboid>();
+		ar.add(this);
+		ar.add(c1);
+		Collections.sort(ar, new Cuboid.SortByArea());
+		//return compare(this,ar.get(0));
 	}
-	public class SortByArea{
+	public class SortByArea implements Comparator<Cuboid>{
 		public int compare(Cuboid x, Cuboid y) {
-			return (Double.compare(x.area(),y.area()));
+			return (int) (x.area() -y.area());
 		}
 	}
-	public class SortByVolume{
+	public class SortByVolume implements Comparator<Cuboid>{
 		public int compare(Cuboid x, Cuboid y) {
-			return (Double.compare(x.volume(),y.volume()));
+			return (int) (x.volume() - y.volume());
 		}
 	}
 
