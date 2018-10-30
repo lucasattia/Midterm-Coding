@@ -35,7 +35,8 @@ public class ShapeTest extends TestCase {
 	    //assertEquals((int) SortByArea.compare(c1,c2) == 52, true);
 	    //assertEquals((int) SortByVolume.compare(c1,c2) == 20, true);
 	    assertEquals(c1.compareTo(c2) == 1, true);
-    	}
+    	
+	}
 	
 	@Test
 	public void testCuboidPerimeter() {

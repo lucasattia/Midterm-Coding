@@ -35,7 +35,7 @@ public class Cuboid extends Rectangle implements Comparable{
 		ar.add(this);
 		ar.add(c1);
 		Collections.sort(ar, new SortByArea()); 
-		// unsure what we were supposed to do after sorting
+		//unsure what we were supposed to do after sorting
 		return 1;
 	}
 }

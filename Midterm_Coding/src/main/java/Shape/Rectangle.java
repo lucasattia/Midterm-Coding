@@ -5,7 +5,7 @@ public class Rectangle extends Shape implements Comparable{
 	int iLength;
 	public Rectangle(int x, int y) {
 		iWidth = x;
-		iLength = y;
+		iLength = y;	
 	}
 	public double area() {
 		return iWidth *iLength;
@@ -29,5 +29,4 @@ public class Rectangle extends Shape implements Comparable{
 		Rectangle r1 = (Rectangle) o;
 		return (Double.compare(this.area(),r1.area()));
 	}
-	
 }
