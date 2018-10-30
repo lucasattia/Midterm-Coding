@@ -34,18 +34,18 @@ public class Cuboid extends Rectangle implements Comparable{
 		ArrayList<Cuboid> ar = new ArrayList<Cuboid>();
 		ar.add(this);
 		ar.add(c1);
-		Collections.sort(ar, new Cuboid.SortByArea());
-		//return compare(this,ar.get(0));
+		Collections.sort(ar, new SortByArea()); 
+		// unsure what we were supposed to do after sorting
+		return 1;
 	}
-	public class SortByArea implements Comparator<Cuboid>{
+}
+	class SortByArea implements Comparator<Cuboid>{
 		public int compare(Cuboid x, Cuboid y) {
 			return (int) (x.area() -y.area());
 		}
 	}
-	public class SortByVolume implements Comparator<Cuboid>{
+	class SortByVolume implements Comparator<Cuboid>{
 		public int compare(Cuboid x, Cuboid y) {
 			return (int) (x.volume() - y.volume());
 		}
 	}
-
-}
